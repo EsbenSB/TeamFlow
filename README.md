@@ -1,40 +1,127 @@
-﻿# TeamFlow API
+﻿# TeamFlow
 
 ## Overview
 
-TeamFlow is a task management backend built with ASP.NET Core.
+TeamFlow is a fullstack task management application inspired by tools like Trello.
 
-It supports:
+It includes a secure backend API and a React frontend, supporting multi-user workflows with proper data isolation.
 
-* User authentication (JWT)
-* Workspaces, Boards, and Tasks
-* User-based data isolation
-* Clean API responses using DTOs
+---
+
+## Features
+
+### Authentication
+
+* User registration & login
+* JWT-based authentication
+* Protected API endpoints
+
+### Core Functionality
+
+* Workspaces
+* Boards within workspaces
+* Tasks within boards
+
+### Multi-user System
+
+* Each user only sees their own data
+* Secure data isolation across all entities
+
+### Frontend
+
+* React + TypeScript (Vite)
+* Routing with React Router
+* API integration with Axios
+* Loading states & empty states
+* Protected routes
+
+---
 
 ## Tech Stack
+
+### Backend
 
 * ASP.NET Core Web API
 * Entity Framework Core
 * SQL Server (LocalDB)
 * JWT Authentication
 
-## Features
+### Frontend
 
-* Register & Login
-* Secure endpoints with JWT
-* Multi-user data isolation
-* CRUD for Workspaces, Boards, Tasks
+* React (Vite)
+* TypeScript
+* Axios
+* React Router
 
-## Run the project
+---
+
+## Project Structure
+
+```
+TeamFlow/
+├── TeamFlow.API/
+├── TeamFlow.Application/
+├── TeamFlow.Domain/
+├── TeamFlow.Infrastructure/
+├── frontend/
+```
+
+---
+
+## Run the Project
+
+### Backend
 
 ```bash
 dotnet run --project TeamFlow.API
 ```
 
-## Example flow
+### Frontend
 
-1. Register user
-2. Login → get token
-3. Create workspace
-4. Create board
-5. Create task
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+---
+
+## Example Flow
+
+1. Register a user
+2. Login → receive JWT token
+3. Create a workspace
+4. Create boards inside workspace
+5. Create tasks inside boards
+
+---
+
+## Screenshots
+
+*Add screenshots of:*
+
+* Login page
+* Dashboard (workspaces)
+* Boards view
+* Tasks view
+
+---
+
+## Future Improvements
+
+* Drag & drop tasks (Kanban)
+* Assign users to tasks
+* Due dates & priorities
+* UI improvements (Tailwind)
+* Deployment (Azure / Docker)
+
+---
+
+## Purpose
+
+This project was built to strengthen skills in:
+
+* Fullstack development
+* API design
+* Authentication & security
+* React + backend integration
