@@ -50,23 +50,30 @@ export default function Home() {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <div>
+    <div style={{ maxWidth: 800, margin: "0 auto", padding: 20 }}>
       <Navbar />
       <h2>Dashboard</h2>
 
       <h3>Create Workspace</h3>
       <input
+        style={{
+          padding: "8px",
+          marginRight: "10px",
+          border: "1px solid #ccc",
+        }}
         value={name}
         onChange={(e) => setName(e.target.value)}
         placeholder="Workspace name"
       />
-      <button onClick={createWorkspace}>Create</button>
+      <button style={{ padding: "8px 12px" }} onClick={createWorkspace}>
+        Create
+      </button>
 
       <h3>Your Workspaces</h3>
 
       {workspaces.length === 0 ? (
         <p style={{ opacity: 0.6 }}>
-          No workspaces yet — create your first one 🚀
+          No workspaces yet — create your first one
         </p>
       ) : (
         <ul>

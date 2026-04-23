@@ -53,16 +53,23 @@ export default function Workspace() {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <div>
+    <div style={{ maxWidth: 800, margin: "0 auto", padding: 20 }}>
       <Navbar />
       <h2>Boards</h2>
 
       <input
+        style={{
+          padding: "8px",
+          marginRight: "10px",
+          border: "1px solid #ccc",
+        }}
         value={name}
         onChange={(e) => setName(e.target.value)}
         placeholder="New board"
       />
-      <button onClick={createBoard}>Create</button>
+      <button style={{ padding: "8px 12px" }} onClick={createBoard}>
+        Create
+      </button>
 
       {boards.length === 0 ? (
         <p style={{ opacity: 0.6 }}>No boards yet — create your first one </p>

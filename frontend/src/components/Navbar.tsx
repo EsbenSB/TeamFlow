@@ -7,9 +7,17 @@ export default function Navbar() {
   };
 
   return (
-    <div style={{ padding: 10, borderBottom: "1px solid #ccc" }}>
-      <Link to="/">Dashboard</Link>
-      <button onClick={logout} style={{ marginLeft: 10 }}>
+    <div
+      style={{
+        padding: "10px 20px",
+        borderBottom: "1px solid #eee",
+        display: "flex",
+        justifyContent: "space-between",
+      }}
+    >
+      <Link to="/">TeamFlow</Link>
+
+      <button style={{ padding: "8px 12px" }} onClick={logout}>
         Logout
       </button>
     </div>

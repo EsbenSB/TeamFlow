@@ -49,16 +49,23 @@ export default function Board() {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <div>
+    <div style={{ maxWidth: 800, margin: "0 auto", padding: 20 }}>
       <Navbar />
       <h2>Tasks</h2>
 
       <input
+        style={{
+          padding: "8px",
+          marginRight: "10px",
+          border: "1px solid #ccc",
+        }}
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="New task"
       />
-      <button onClick={createTask}>Create</button>
+      <button style={{ padding: "8px 12px" }} onClick={createTask}>
+        Create
+      </button>
 
       {tasks.length === 0 ? (
         <p style={{ opacity: 0.6 }}>No tasks yet — create your first one</p>

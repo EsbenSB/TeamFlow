@@ -1,36 +1,27 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import api from "../api/client";
-import Navbar from "../components/Navbar";
 
-export default function Login() {
+export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = async () => {
+  const handleRegister = async () => {
     try {
-      const res = await api.post("/auth/login", {
+      await api.post("/auth/register", {
         email,
         password,
       });
 
-      localStorage.setItem("token", res.data.token);
-      window.location.href = "/";
-    } catch (err: unknown) {
-      console.log(err);
-
-      if (err instanceof Error) {
-        console.log(err.message);
-      }
-
-      alert("Login failed");
+      alert("User created! You can now login.");
+      window.location.href = "/login";
+    } catch {
+      alert("Registration failed");
     }
   };
 
   return (
     <div style={{ maxWidth: 800, margin: "0 auto", padding: 20 }}>
-      <Navbar />
-      <h2>Login</h2>
+      <h2>Register</h2>
 
       <input
         style={{
@@ -53,13 +44,9 @@ export default function Login() {
         onChange={(e) => setPassword(e.target.value)}
       />
 
-      <button style={{ padding: "8px 12px" }} onClick={handleLogin}>
-        Login
+      <button style={{ padding: "8px 12px" }} onClick={handleRegister}>
+        Register
       </button>
-
-      <p>
-        Don't have an account? <Link to="/register">Register</Link>
-      </p>
     </div>
   );
 }
