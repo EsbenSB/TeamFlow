@@ -101,6 +101,9 @@ npm run dev
 *Add screenshots of:*
 
 * Login page
+
+* <img width="407" height="144" alt="image" src="https://github.com/user-attachments/assets/5ab570ad-01b4-4eed-a8df-491e0fa11643" />
+
 * Dashboard (workspaces)
 * Boards view
 * Tasks view
